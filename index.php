@@ -29,26 +29,28 @@ if (!$conn) {
 </head>
 
 <body>
-    <a class="btn btn-primary" href="eng/eng.html" role="button">English version</a>
+    <a class="btn btn-primary" href="eng/eng.php" role="button">English version</a>
     <div class="container-fluid text-center">
         <h1>Generator losowych cytatów filmowych</h1>
         <p class="header">Prezentuje wam moje ulubione cytaty filmowe wszechczasów.</p>
         <div class="quotes text-center">
             <span id="quote"> 
             <?php 
-            $sql = "SELECT * FROM quotes";      
-            $result = mysqli_query($conn,$sql);
+            $sql = "SELECT * FROM cytaty";      
+            $result = mysqli_query($conn,$sql);            
             $row = mysqli_fetch_all($result);
-            $randomn = $row[rand(0,9)];      	
-            print_r($randomn[1]);                
+            $randomn = $row[rand(0,9)];
+            $randomn1 = $randomn[1];      
+            echo ($randomn1);               
             ?></span>
             <span id="author">
             <?php
-            $sql = "SELECT * FROM quotes";      
+            $sql = "SELECT * FROM cytaty";      
             $result = mysqli_query($conn,$sql);           
-            $row = mysqli_fetch_all($result);      	
-            print_r($randomn[2]);
-            mysqli_close($conn);         
+            $row = mysqli_fetch_all($result);
+            $randomn2 = $randomn[2];      
+            echo ($randomn2);
+            mysqli_close($conn);                      
             ?></span>
         </div>
 
@@ -57,14 +59,8 @@ if (!$conn) {
                 <button type="button" class="btn btn-primary" type="submit" id="new-quote"><i class="fa fa-quote-left"> Nowy cytat</i></button>
                 <a href="#" class="btn btn-primary" id="tweet"><i class="fa fa-twitter"> Tweetnij!</i></a>
             </div>
-        </div>
-       <?php
-        $sql = "SELECT * FROM quotes";      
-        $result = mysqli_query($conn,$sql);
-        $row = mysqli_fetch_all($result);        
-        print_r ($row[10][1]);
-        mysqli_close($conn);          
-        ?>        
+        </div>      
+        
         <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>      
         <script src="js/index.js"></script>
 </body>
