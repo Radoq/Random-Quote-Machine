@@ -29,7 +29,7 @@ if (!$conn) {
 </head>
 
 <body>
-    <a class="btn btn-primary" href="eng/eng.php" role="button">English version</a>
+    <a class="btn btn-primary" href="eng/" role="button">English version</a>
     <div class="container-fluid text-center">
         <h1>Generator losowych cytatów filmowych</h1>
         <p class="header">Prezentuje wam moje ulubione cytaty filmowe wszechczasów.</p>
